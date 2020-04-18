@@ -1,0 +1,272 @@
+span {
+  color: var(--color-grey);
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: -0.36px;
+  display: inline;
+  white-space: nowrap;
+  color: var(--color-white);
+  border-bottom: 1px solid transparent;
+}
+
+.inputBox {
+  display: block;
+  margin: 0;
+}
+
+.searchIcon {
+  position: relative;
+  top: -32px;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.searchResult {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  position: relative;
+}
+
+.searchResult > * {
+  grid-column: 1/-1;
+}
+
+.sectionArtists {
+  padding: 40px 0;
+}
+
+.searchSection {
+  grid-column: 1/-1;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.searchSectionText {
+  font-size: 28px;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: -0.36px;
+  color: var(--color-white);
+  flex: 1 0 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchList {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+
+.searchItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px 20px 16px;
+  background: #282828;
+  border-radius: 8px;
+  isolation: isolate;
+  cursor: pointer;
+}
+
+.itemGrid {
+  display: inline;
+}
+
+.itemIMG {
+  height: 0;
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  margin-bottom: 16px;
+  background-color: #333;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.itemIMGLayer {
+  opacity: 1;
+}
+
+.itemIMGLayer > img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.artistNameLink {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.itemInfo {
+  min-height: 62px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.itemInfo > a {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.itemInfo > a > span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.itemInfo > a:hover > span,
+.itemInfo > span:hover {
+  text-decoration: none;
+}
+
+.itemName {
+  color: var(--color-white);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.itemType {
+  font-size: 12px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-grey);
+  padding: 0;
+  margin-top: 4px;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.itemType > span {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 0.24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+input {
+  color: var(--color-black);
+  padding: 6px 48px;
+  height: 40px;
+  width: 100%;
+  border: 0;
+  border-radius: 500px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  font-weight: var(--glue-font-weight-normal);
+  text-transform: none;
+  font-family: spotify-circular, spotify-circular-cyrillic, spotify-circular-arabic,
+    spotify-circular-hebrew, Helvetica Neue, Helvetica, Arial, Hiragino Kaku Gothic Pro, Meiryo,
+    MS Gothic, sans-serif;
+}
+
+.searchList > a {
+  opacity: 1;
+}
+
+.playButton {
+  float: right;
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  bottom: 5px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  border-radius: 500px;
+}
+
+.playButton > button {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  --size: 40px;
+  border: 0;
+  border-radius: 500px;
+  color: #fff;
+  background-color: #1db954;
+  -webkit-transition: -webkit-transform 33ms cubic-bezier(0.3, 0, 0, 1);
+  transition: -webkit-transform 33ms cubic-bezier(0.3, 0, 0, 1);
+  transition: transform 33ms cubic-bezier(0.3, 0, 0, 1);
+  transition: transform 33ms cubic-bezier(0.3, 0, 0, 1),
+    -webkit-transform 33ms cubic-bezier(0.3, 0, 0, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: var(--size);
+  width: var(--size);
+  min-width: var(--size);
+}
+
+@media (max-width: 768px) {
+  .postInput {
+    width: 90%;
+  }
+
+  .postList {
+    width: 90%;
+  }
+
+  .commentList {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .searchResult {
+    text-align: center;
+  }
+}

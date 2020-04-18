@@ -1,0 +1,36 @@
+:root {
+  --color-background: #111111;
+  --color-background-explicit: hsla(0, 0%, 100%, 0.6);
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #b3b3b3;
+  --color-tracklist-hover: hsla(0, 0%, 100%, 0.1);
+
+  --height-nav-bar: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+li:focus {
+  outline: none;
+}
+
+body {
+  background: var(--color-background);
+}
+
+.menuWrapper > a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.24px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid transparent;
+}
