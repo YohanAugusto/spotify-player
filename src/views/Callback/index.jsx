@@ -15,7 +15,7 @@ const hash = window.location.hash
 
 window.location.hash = ''
 
-const Home = () => {
+const Callback = () => {
   const [linkToRedirect, setLinkToRedirect] = useState(null)
 
   useEffect(() => {
@@ -36,4 +36,4 @@ const Home = () => {
   return null
 }
 
-export default Home
+export default Callback

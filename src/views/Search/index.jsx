@@ -43,7 +43,7 @@ const renderInput = (search, setSearch, setAlbums) => (
   </>
 )
 
-const Dashboard = () => {
+const Search = () => {
   const userStore = useContext(UserContext)
   const [search, setSearch] = useState(null)
   const [albums, setAlbums] = useState(null)
@@ -83,4 +83,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Search
