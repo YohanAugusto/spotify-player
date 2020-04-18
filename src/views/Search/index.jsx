@@ -10,8 +10,19 @@ const MAX_RECENT_SEARCHES_ITEMS = 15
 
 const submitSearch = async (value, setAlbums, event) => {
   event?.preventDefault()
+  event.persist()
+  if (value === null || value === '') {
+    return setAlbums(null)
+  }
   const albums = await doSearch(value)
   setAlbums(albums)
+}
+
+const handleChange = (setSearch, setAlbums, e) => {
+  setSearch(e.target.value)
+  if (!e.nativeEvent.data) {
+    setAlbums(null)
+  }
 }
 
 const renderInput = (search, setSearch, setAlbums) => (
@@ -25,8 +36,8 @@ const renderInput = (search, setSearch, setAlbums) => (
           id='searchInput'
           name='search'
           maxLength='80'
-          placeholder='Busque por álbums, artistas ou músicas'
-          onChange={e => setSearch(e.target.value)}
+          placeholder='Busque por álbuns, artistas ou músicas'
+          onChange={e => handleChange(setSearch, setAlbums, e)}
         />
       </label>
       <div className={styles.searchIcon}>
@@ -60,23 +71,21 @@ const Search = () => {
   return (
     <>
       {renderRedirect()}
-
       {renderInput(search, setSearch, setAlbums)}
-      {!albums ? (
-        searchHistory?.length > 0 && (
-          <RenderContent
-            albums={searchHistory.slice(0, MAX_RECENT_SEARCHES_ITEMS)}
-            userStore={userStore}
-            setLinkRedirect={setLinkRedirect}
-            text='Buscados recentemente'
-          />
-        )
-      ) : (
+      {albums && (
         <RenderContent
           albums={albums}
           userStore={userStore}
           setLinkRedirect={setLinkRedirect}
           text={`Resultados para ${search}`}
+        />
+      )}
+      {searchHistory?.length > 0 && (
+        <RenderContent
+          albums={searchHistory.slice(0, MAX_RECENT_SEARCHES_ITEMS)}
+          userStore={userStore}
+          setLinkRedirect={setLinkRedirect}
+          text='Buscas recentes'
         />
       )}
     </>
