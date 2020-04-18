@@ -19,6 +19,8 @@ const renderInput = (search, setSearch, setAlbums) => (
     <form onSubmit={e => submitSearch(search, setAlbums, e)}>
       <label className={styles.inputBox}>
         <input
+          autoComplete='off'
+          type='search'
           value={search || ''}
           id='searchInput'
           name='search'

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { validateToken, getToken } from 'utils'
+import { validateToken, getToken, isMobile } from 'utils'
 import { Redirect } from 'react-router-dom'
 import UserContext from 'stores/UserStore'
 import styles from './index.module.scss'
@@ -46,7 +46,7 @@ const Home = () => {
     <>
       <div className={styles.login}>
         <a id='buttonLogin' className={styles.loginButton} href={login()}>
-          Acesse sua conta
+          {isMobile ? 'Login' : 'Acesse sua conta'}
         </a>
       </div>
     </>

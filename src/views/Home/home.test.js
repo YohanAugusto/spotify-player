@@ -11,6 +11,6 @@ describe('<Home />', () => {
   it('change input value without crashing', () => {
     const component = mount(<Home />)
     expect(component.find('#buttonLogin')).toHaveLength(1)
-    expect(component.find('#buttonLogin').text()).toBe('Acesse sua conta')
+    expect(component.find('#buttonLogin').text()).toBe('Login')
   })
 })

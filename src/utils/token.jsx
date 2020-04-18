@@ -1,10 +1,10 @@
 const getCookieLoggedName = () => {
   switch (process.env.REACT_APP_NODE_ENV) {
-    case 'development':
+    case 'DSV':
       return 'DSV_cookie'
-    case 'staging':
+    case 'HML':
       return 'HML_cookie'
-    case 'production':
+    case 'PRD':
       return 'PRD_cookie'
     default:
       return 'DSV_cookie'

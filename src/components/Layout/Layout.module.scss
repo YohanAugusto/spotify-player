@@ -44,8 +44,32 @@
   border-radius: 150px;
 }
 
+@media (max-width: 1024px) {
+  .content {
+    padding: 10% 5% 5% 5%;
+  }
+  .logo {
+    left: 5%;
+  }
+}
+
 @media (max-width: 768px) {
   .content {
+    padding: 15% 5% 5% 5%;
+  }
+  .logo {
+    left: 5%;
+  }
+}
+
+@media (max-width: 670px) {
+  .content {
     padding: 25% 5% 5% 5%;
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+    padding: 30% 5% 5% 5%;
   }
 }
