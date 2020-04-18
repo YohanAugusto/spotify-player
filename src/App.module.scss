@@ -16,7 +16,9 @@
   font-family: 'Roboto';
 }
 
-li:focus {
+li:focus,
+button:focus,
+input:focus {
   outline: none;
 }
 
