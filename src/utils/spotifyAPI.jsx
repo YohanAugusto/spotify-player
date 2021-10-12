@@ -32,9 +32,12 @@ const doSearch = value =>
       if (res.status !== 200) throw res
 
       const albumList = []
-      res.data?.tracks?.items.map(track => {
-        albumList.filter(album => album.id === track?.album?.id).length === 0 &&
-          albumList.push(track.album)
+      res.data?.tracks?.items.forEach(track => {
+        if (albumList.filter(album => album.id === track?.album?.id).length === 0) {
+          return albumList.push(track.album)
+        }
+
+        return false
       })
 
       return albumList
