@@ -1,13 +1,13 @@
 const getCookieLoggedName = () => {
   switch (process.env.REACT_APP_NODE_ENV) {
     case 'DSV':
-      return 'DSV_cookie'
+      return {name: 'DSV_cookie', domain: "localhost"}
     case 'HML':
-      return 'HML_cookie'
+      return {name: 'HML_cookie', domain: "spotify-player-three.vercel.app"}
     case 'PRD':
-      return 'PRD_cookie'
+      return {name: 'PRD_cookie', domain: "spotify-player-three.vercel.app"}
     default:
-      return 'DSV_cookie'
+      return {name: 'HMLDSV_cookie_cookie', domain: "localhost"}
   }
 }
 
@@ -18,17 +18,18 @@ const getToken = () => {
 
 const setToken = token => {
   const sharedCookieName = getCookieLoggedName()
-  document.cookie = `${sharedCookieName}=${token};path=/;domain=localhost`
+  document.cookie = `${sharedCookieName?.name}=${token};path=/;domain=${sharedCookieName?.domain}`
 }
 
 const clearToken = () => {
   const cookies = document.cookie.split(';')
+  const sharedCookieName = getCookieLoggedName()
 
   cookies.forEach(cookie => {
     const eqPos = cookie.indexOf('=')
     const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie
 
-    document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=localhost`
+    document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=${sharedCookieName?.domain}`
   })
 }
 
