@@ -12,7 +12,7 @@ const getCookieLoggedName = () => {
 }
 
 const getToken = () => {
-  const r = document.cookie.match(`\\b${getCookieLoggedName()}=([^;]*)\\b`)
+  const r = document.cookie.match(`\\b${getCookieLoggedName()?.name}=([^;]*)\\b`)
   return r ? r[1] : undefined
 }
 
