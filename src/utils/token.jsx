@@ -7,7 +7,7 @@ const getCookieLoggedName = () => {
     case 'PRD':
       return {name: 'PRD_cookie', domain: "spotify-player-three.vercel.app"}
     default:
-      return {name: 'HMLDSV_cookie_cookie', domain: "localhost"}
+      return {name: 'DSV_cookie', domain: "localhost"}
   }
 }
 
